@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/data-table/table";
+} from "@/components/ui/table/table";
 import { useSelector } from "@/hooks/redux";
 import {
   ColumnDef,

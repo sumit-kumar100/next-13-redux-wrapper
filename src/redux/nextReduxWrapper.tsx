@@ -10,7 +10,7 @@ export function NextReduxWrapper<State extends HydrateableSlices>({
   hydrateStates,
   children,
 }: {
-  hydrateStates: Pick<RootState, State>;
+  hydrateStates: { [Key in State]: Partial<RootState[Key]> };
   children: ReactNode;
 }) {
   let preloadedState: boolean = false;

@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { SiteHeader } from "@/components/layout/site-header";
-import { ThemeProvider } from "@/components/layout/theme-provider";
+import { SiteHeader } from "@/components/layout/siteHeader";
+import { ThemeProvider } from "@/components/layout/themeProvider";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
