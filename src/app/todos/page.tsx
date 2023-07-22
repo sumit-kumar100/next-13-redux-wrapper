@@ -43,12 +43,26 @@ export default async function IndexPage() {
 
   const state = useSelector((state: RootState) => state);
 
-  const hydrateStates = {
-    todo: state.todo,
+  // all slices hydrating i.e,[product & todo]
+  const allSlices = state
+
+  // fully hydrating todo slice
+  const fullHydrateSlices = {
+    todo: state.todo
   };
 
+  // partially hydrating todo slice
+  const partialHydrateSlices = {
+    todo: {
+      data: {
+        ...state.todo.data
+      },
+      isLoading: false
+    }
+  }
+
   return (
-    <NextReduxWrapper hydrateStates={hydrateStates}>
+    <NextReduxWrapper hydrateStates={fullHydrateSlices}>
       <DataTable
         columns={columns}
         data={state.todo.data.todos.slice(0, state.todo.data.todos.length)}
