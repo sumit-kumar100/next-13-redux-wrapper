@@ -51,10 +51,10 @@ export default async function IndexPage() {
     product: state.product
   };
 
-  // fully hydrating todo & product slice which is equal to allSlice as we have only two slices [product & todo]
+  // fully hydrating product & todo slice which is equal to allSlice as we have only two slices [product & todo]
   const fullHydrateTodoAndProduct = {
-    todo: state.todo,
-    product: state.product
+    product: state.product,
+    todo: state.todo
   };
 
   // partially hydrating product slice
