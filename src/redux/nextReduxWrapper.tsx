@@ -6,6 +6,8 @@ import { RootState, store } from "./store";
 
 type HydrateableSlices = keyof RootState;
 
+let preloadedState: boolean = false;
+
 export function NextReduxWrapper<State extends HydrateableSlices>({
   hydrateStates,
   children,
@@ -13,7 +15,6 @@ export function NextReduxWrapper<State extends HydrateableSlices>({
   hydrateStates: { [Key in State]: Partial<RootState[Key]> };
   children: ReactNode;
 }) {
-  let preloadedState: boolean = false;
 
   if (!preloadedState) {
     store.dispatch({ type: "HYDRATE", payload: hydrateStates });
